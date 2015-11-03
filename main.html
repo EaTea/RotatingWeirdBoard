@@ -1,7 +1,8 @@
 <html>
   <head>
     <script src="bower_components/modernizr/modernizr.js"></script>
-    <script src="src/Paper.js"></script>
+    <script src="bower_components/paper/dist/paper-full.min.js"></script>
+    <script src="src/sheet.js"></script>
     <style>
       #appCanvas {
         width: 100%;
@@ -18,8 +19,15 @@
           return;
         }
 
-        var paper = new Paper(
-            document.getElementById('appCanvas').getContext('2d'), 200, 200);
+        if (!window.paper) {
+          window.console.log('Paper wasn\'t downloaded');
+          return;
+        }
+
+        window.console.log('Ready to play!');
+        paper.setup(document.getElementById('appCanvas'));
+        var sheet = new Sheet(paper, 100, 100);
+        debugger;
       })();
     </script>
   </body>
