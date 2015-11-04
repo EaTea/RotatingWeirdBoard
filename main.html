@@ -26,7 +26,7 @@
 
         window.console.log('Ready to play!');
         paper.setup(document.getElementById('appCanvas'));
-        var sheet = new Sheet(paper, {
+        var sheet = new Sheet(paper.view, {
           width: 400,
           height: 400,
           topLeft: new paper.Point(100, 100)
