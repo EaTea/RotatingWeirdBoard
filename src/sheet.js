@@ -8,4 +8,9 @@ function Sheet(canvas, opts) {
   var path = new paper.Path.Rectangle(rectangle);
   // Give the stroke a color
   path.strokeColor = 'black';
+  path.fillColor = 'white';
+
+  path.onMouseDown = function(event) {
+    window.console.log(event);
+  };
 }
